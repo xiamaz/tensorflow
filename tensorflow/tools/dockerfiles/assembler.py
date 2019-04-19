@@ -474,13 +474,13 @@ def main(argv):
 
   # Read the full spec file, used for everything
   with open(FLAGS.spec_file, 'r') as spec_file:
-    tag_spec = yaml.load(spec_file)
+    tag_spec = yaml.load(spec_file, Loader=yaml.FullLoader)
 
   # Get existing partial contents
   partials = gather_existing_partials(FLAGS.partial_dir)
 
   # Abort if spec.yaml is invalid
-  schema = yaml.load(SCHEMA_TEXT)
+  schema = yaml.load(SCHEMA_TEXT, Loader=yaml.FullLoader)
   v = TfDockerTagValidator(schema, partials=partials)
   if not v.validate(tag_spec):
     eprint('> Error: {} is an invalid spec! The errors are:'.format(
