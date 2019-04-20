@@ -61,12 +61,22 @@ releases:
 slice_sets:
 
     py:
-        - add_to_name: ""
+        - add_to_name: "-py27"
           args:
-              - USE_PYTHON_3_NOT_2=
-        - add_to_name: "-py3"
+              - PYTHON_VERSION=2.7.16
+              - PYTHON_SUFFIX=2
+        - add_to_name: "-py35"
           args:
-              - USE_PYTHON_3_NOT_2=1
+              - PYTHON_VERSION=3.5.7
+              - PYTHON_SUFFIX=3
+        - add_to_name: "-py36"
+          args:
+              - PYTHON_VERSION=3.6.8
+              - PYTHON_SUFFIX=3
+        - add_to_name: "-py37"
+          args:
+              - PYTHON_VERSION=3.7.3
+              - PYTHON_SUFFIX=3
 
     jupyter:
         - add_to_name: ""
