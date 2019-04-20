@@ -18,7 +18,7 @@ RUN ${PIP} --no-cache-dir install \
     scipy \
     sklearn \
     pandas \
-    && test "${USE_PYTHON_3_NOT_2}" -eq 1 && true || ${PIP} --no-cache-dir install \
+    && test "${PYTHON_SUFFIX}" -eq 3 && true || ${PIP} --no-cache-dir install \
     enum34
 
 # Install bazel
